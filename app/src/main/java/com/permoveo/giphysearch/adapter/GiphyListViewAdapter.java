@@ -51,7 +51,7 @@ public class GiphyListViewAdapter extends RecyclerView.Adapter<GiphyListViewAdap
         String imageUrl = mItems.get(position).getUrl();
 
         if (imageUrl != null && !imageUrl.isEmpty()) {
-            Picasso.with(holder.imageView.getContext()).load(mItems.get(position).getUrl()).fit().centerCrop().placeholder(R.drawable.placeholder_thumbnail).into(holder.imageView);
+            Picasso.with(holder.imageView.getContext()).load(imageUrl).fit().centerCrop().placeholder(R.drawable.placeholder_thumbnail).into(holder.imageView);
         }
 
 
