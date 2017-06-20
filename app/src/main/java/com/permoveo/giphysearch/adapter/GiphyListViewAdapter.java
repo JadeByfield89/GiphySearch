@@ -17,7 +17,7 @@ import butterknife.ButterKnife;
 
 /**
  * Created by byfieldj on 6/19/17.
- *
+ * <p>
  * Adapter class for the scrolling list of GIFs that will be returned by Giphy's API
  */
 
@@ -48,7 +48,11 @@ public class GiphyListViewAdapter extends RecyclerView.Adapter<GiphyListViewAdap
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
 
-        Picasso.with(holder.imageView.getContext()).load(mItems.get(position).getUrl()).fit().centerCrop().placeholder(R.drawable.placeholder_thumbnail).into(holder.imageView);
+        String imageUrl = mItems.get(position).getUrl();
+
+        if (imageUrl != null && !imageUrl.isEmpty()) {
+            Picasso.with(holder.imageView.getContext()).load(mItems.get(position).getUrl()).fit().centerCrop().placeholder(R.drawable.placeholder_thumbnail).into(holder.imageView);
+        }
 
 
     }
