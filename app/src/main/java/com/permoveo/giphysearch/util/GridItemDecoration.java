@@ -6,6 +6,9 @@ import android.view.View;
 
 /**
  * Created by byfieldj on 6/19/17.
+ *
+ * Custom ItemDecoration that instructs the RecyclerView how to lay itself out
+ * In this case we want to have the same padding between the cells horizontally and vertically
  */
 public class GridItemDecoration extends RecyclerView.ItemDecoration {
 
